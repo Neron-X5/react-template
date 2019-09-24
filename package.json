@@ -1,0 +1,23 @@
+{
+  "name": "react-template",
+  "version": "1.0.0",
+  "description": "Basic template for simple React app will all tooling setup",
+  "author": "Neron-X5",
+  "license": "Unlicense",
+  "homepage": "https://github.com/Neron-X5/react-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neron-X5/react-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Neron-X5/react-template/issues"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "react",
+    "template"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
