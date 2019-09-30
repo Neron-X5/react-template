@@ -18,9 +18,29 @@
     "template"
   ],
   "scripts": {
-    "lint": "eslint \"src/**/*.{js,jsx}\" --cache --cache-location .eslintcache/ --format table",
-    "lint:fix": "eslint \"src/**/*.{js,jsx}\" --cache --cache-location .eslintcache/ --format table --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write --only-changed --config .prettierrc.json",
+    "eslint": "eslint \"src/**/*.{js,jsx}\" --cache --cache-location .eslintcache/ --format table",
+    "eslint:fix": "eslint --cache --cache-location .eslintcache/ --format table --max-warnings 3 --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss}\" --syntax scss",
+    "stylelint:fix": "stylelint --syntax scss --fix",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js?(x)": [
+      "npm run prettier",
+      "npm run eslint:fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "npm run stylelint:fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^6.4.0",
@@ -31,6 +51,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.18.2"
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.0",
+    "prettier": "^1.18.2",
+    "stylelint": "^11.0.0",
+    "stylelint-config-sass-guidelines": "^6.1.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1"
   }
 }
