@@ -18,6 +18,9 @@
     "template"
   ],
   "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
     "prettier": "prettier --write --only-changed --config .prettierrc.json",
     "eslint": "eslint \"src/**/*.{js,jsx}\" --cache --cache-location .eslintcache/ --format table",
     "eslint:fix": "eslint --cache --cache-location .eslintcache/ --format table --max-warnings 3 --fix",
@@ -54,6 +57,9 @@
     "husky": "^3.0.7",
     "lint-staged": "^9.4.0",
     "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.22.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "stylelint": "^11.0.0",
     "stylelint-config-sass-guidelines": "^6.1.0",
     "stylelint-config-standard": "^19.0.0",
