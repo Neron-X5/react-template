@@ -1,18 +1,8 @@
 // Variable
 $primary-color: rgb(255, 105, 180);
 
-// Mixin
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
-
-.my-element {
+.greeting {
   color: $primary-color;
   overflow: hidden;
   width: 100%;
 }
-
-.my-other-element {
-  @include border-radius(5px);}

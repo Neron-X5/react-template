@@ -7,7 +7,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "extends": ["standard"],
+  "extends": ["standard", "plugin:react/recommended"],
   "plugins": ["prettier", "react"],
   "parserOptions": {
     "ecmaFeatures": {
